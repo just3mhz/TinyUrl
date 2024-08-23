@@ -8,16 +8,34 @@ Link shortener service.
 docker compose up -d --build
 ```
 
-## Request examples
+## API
 
-```bash
-$ curl -H "Content-Type: application/json" --data '{"long_url": "https://www.someurl.://www.someurl.com/"}' localhost:8000/api/v1/short_urls
+### 1. Get token
 
-{"token":"quv"}
++ Path: `/api/v1/short_urls`
++ Method: `POST`
++ Request body:
+```json
+        {
+            "long_url": "..."
+        }
+```
++ Response:
+```json
+        {
+            "token": "..."
+        }
+```
 
-$ curl localhost:8000/api/v1/short_urls/quv
+### 2. Get URL
 
-{"url":"https://www.someurl.com/"}
++ Path: `/api/v1/short_urls/:token`
++ Method: `GET`
++ Response:
+```json
+        {
+            "url": "..."
+        }
 ```
 
 

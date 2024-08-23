@@ -1,7 +1,6 @@
-from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.ext.asyncio import async_sessionmaker
 from sqlalchemy.ext.asyncio import create_async_engine
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 
 engine = create_async_engine("sqlite+aiosqlite:////var/data/storage.db")
 

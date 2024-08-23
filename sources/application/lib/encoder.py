@@ -3,7 +3,7 @@ from base64 import b64decode
 
 
 _std_alphabet = b'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-_alphabet = b'TQqtblDjGXwF7kEJi4<CvYshLda8uBV0c9AfUZRpPox6M>yHz3WgmINenrSK15O2'
+_alphabet = b'TQqtblDjGXwF7kEJi4~CvYshLda8uBV0c9AfUZRpPox6M-yHz3WgmINenrSK15O2'
 
 _encode_translation = bytes.maketrans(_std_alphabet, _alphabet)
 _decode_translation = bytes.maketrans(_alphabet, _std_alphabet)

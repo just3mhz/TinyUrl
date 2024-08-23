@@ -2,14 +2,14 @@ import logging
 
 from fastapi import FastAPI
 
-from application.api import tinyurl
-from application.storage import storage
+from application.api.v1 import routes
+from application.database import database
 
 app = FastAPI()
 
 @app.on_event("startup")
 async def startup():
-    await storage.configure()
+    await database.configure()
 
 
 @app.on_event("shutdown")
@@ -17,6 +17,6 @@ async def shutdown():
     pass
 
 
-app.include_router(tinyurl.router)
+app.include_router(routes.router)
 
 logging.basicConfig(level=logging.INFO)

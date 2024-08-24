@@ -1,5 +1,9 @@
 from pydantic import BaseModel
 
 
-class LongUrl(BaseModel):
-    long_url: str
+class UrlPayload(BaseModel):
+    url: str
+
+
+class TokenPayload(BaseModel):
+    token: str

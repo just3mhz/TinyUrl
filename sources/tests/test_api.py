@@ -9,7 +9,7 @@ def test_store(test_app, monkeypatch):
     
     monkeypatch.setattr(random, 'randint', mockrandint)
     
-    payload = {'long_url': 'https://some-url.con/some/path'}
+    payload = {'url': 'https://some-url.con/some/path'}
     response = test_app.post('/api/v1/short_urls/', content=json.dumps(payload))
     
     assert response.status_code == 201
@@ -17,7 +17,7 @@ def test_store(test_app, monkeypatch):
 
 
 def test_store_existing(test_app):
-    payload = {'long_url': 'https://www.some-url.com/1'}
+    payload = {'url': 'https://www.some-url.com/1'}
     response = test_app.post('/api/v1/short_urls/', content=json.dumps(payload))
     assert response.status_code == 201
     assert response.json() == {'token': 'TOc'}

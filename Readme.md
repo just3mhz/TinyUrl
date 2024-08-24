@@ -17,7 +17,7 @@ docker compose up -d --build
 + Request body:
 ```json
         {
-            "long_url": "..."
+            "url": "..."
         }
 ```
 + Response:

@@ -14,4 +14,4 @@ class UrlRecord(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     salt: Mapped[int]
-    url: Mapped[str] = mapped_column(Integer, unique=True)
+    url: Mapped[str] = mapped_column(String, unique=True)
